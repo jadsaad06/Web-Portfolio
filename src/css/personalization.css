@@ -1,0 +1,319 @@
+/* Additional Personalization Styles for Jad Saad's Portfolio */
+
+/* Custom Cursor */
+body {
+  cursor: default;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: var(--accent-teal-light);
+  color: var(--text-primary);
+}
+
+/* Enhanced Hero Section with Animated Background */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(45, 212, 191, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+  z-index: -1;
+}
+
+/* Animated dots background */
+.hero-bg-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Enhanced Project Cards with Hover Effects */
+.project-card {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent-teal) 0%, var(--accent-purple) 100%);
+  z-index: 2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Enhanced Skill Tags with Hover Effects */
+.skill-tag {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.skill-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+
+.skill-tag:hover::before {
+  left: 100%;
+}
+
+/* Recruiter-Focused Quick Navigation */
+.recruiter-nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+
+.recruiter-nav-item {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.recruiter-nav-item:hover, 
+.recruiter-nav-item.active {
+  background-color: var(--accent-teal);
+  transform: scale(1.2);
+}
+
+.recruiter-nav-item:hover::before,
+.recruiter-nav-item.active::before {
+  content: attr(data-section);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--accent-teal);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Resume Download Button Enhancement */
+.resume-download {
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-download::after {
+  content: ''; /* Remove the page logo */
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.resume-download:hover::after {
+  transform: translateY(-50%) scale(1.2);
+}
+
+/* Enhanced Contact Form with Focus Effects */
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.3);
+}
+
+/* Recruiter Call-to-Action */
+.recruiter-cta {
+  background: linear-gradient(120deg, var(--accent-teal-light) 0%, var(--accent-purple-light) 100%);
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.recruiter-cta h3 {
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+.recruiter-cta p {
+  margin-bottom: 20px;
+}
+
+.recruiter-cta .cta-buttons {
+    display: flex;
+    justify-content: center; /* Center align the buttons */
+    gap: 20px; /* Add space between the buttons */
+    margin-top: 15px; /* Add spacing above the buttons */
+}
+
+.recruiter-cta .btn-primary,
+.recruiter-cta .btn-secondary {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.recruiter-cta .btn-primary {
+    background-color: #007BFF; /* Example primary button color */
+}
+
+.recruiter-cta .btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.recruiter-cta .btn-secondary {
+    background-color: var(--accent-purple); /* Use your desired purple color */
+}
+
+.recruiter-cta .btn-secondary:hover {
+    background-color: #5A2E85; /* A darker shade of purple for hover */
+}
+
+/* Project Highlight Badge */
+.project-highlight {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--accent-purple);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Animated Skill Level Bars */
+@keyframes skillFill {
+  from { width: 0; }
+  to { width: var(--skill-percent); }
+}
+
+.skill-level {
+  animation: skillFill 1.5s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.skill-level.animate {
+  animation-play-state: running;
+}
+
+/* Enhanced Timeline for Education Section */
+.education-item::before {
+  content: '';
+  position: absolute;
+  left: 140px;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--accent-teal);
+  z-index: 1;
+  box-shadow: 0 0 0 5px rgba(45, 212, 191, 0.3);
+}
+
+/* Personalized Footer with Signature */
+.signature {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+  color: var(--accent-teal-light);
+  margin-bottom: 10px;
+}
+
+/* Accessibility Improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Print Styles for Resume View */
+@media print {
+  .header, .footer, .recruiter-nav, .contact-form {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  .section, .section-alt {
+    padding: 20pt 0;
+    page-break-inside: avoid;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  .skill-level, .project-image img {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Responsive Adjustments for Recruiter Features */
+@media screen and (max-width: 992px) {
+  .recruiter-nav {
+    display: none;
+  }
+}
