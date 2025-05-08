@@ -83,6 +83,8 @@ function addProjectHighlights() {
         highlight1.className = 'project-highlight';
         highlight1.textContent = 'Featured';
         projectCards[0].style.position = 'relative';
+        projectCards[0].style.overflow = 'visible';
+        projectCards[0].querySelector('.project-content').style.position = 'relative';
         projectCards[0].appendChild(highlight1);
     }
     
@@ -91,6 +93,8 @@ function addProjectHighlights() {
         highlight2.className = 'project-highlight';
         highlight2.textContent = 'Latest';
         projectCards[1].style.position = 'relative';
+        projectCards[1].style.overflow = 'visible';
+        projectCards[1].querySelector('.project-content').style.position = 'relative';
         projectCards[1].appendChild(highlight2);
     }
 }

@@ -324,10 +324,11 @@ img {
 }
 
 .skill-level {
-  width: 0; /* Start with 0 width */
-  height: 10px; /* Example height */
-  background-color: #3498db; /* Example color */
-  transition: width 1s ease; /* Smooth animation */
+  height: 100%;
+  background-color: var(--accent-teal);
+  border-radius: 4px;
+  width: 0;
+  transition: width 1s ease;
 }
 
 .skills-tags {
