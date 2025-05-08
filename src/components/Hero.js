@@ -35,9 +35,38 @@ const Hero = () => {
     overflow: 'hidden',
     width: windowWidth <= 576 ? '220px' : windowWidth <= 768 ? '250px' : '280px',
     height: windowWidth <= 576 ? '220px' : windowWidth <= 768 ? '250px' : '280px',
-    margin: '0 auto',
+    margin: windowWidth <= 992 ? '0 auto' : '0',
     borderRadius: '50%',
     marginBottom: windowWidth <= 992 ? '2rem' : '0'
+  };
+  
+  // Container flex styles for desktop
+  const containerStyles = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: windowWidth <= 992 ? 'column-reverse' : 'row',
+    width: '100%',
+    maxWidth: '1200px'
+  };
+  
+  // Content styles to maintain space
+  const contentStyles = {
+    flex: windowWidth <= 992 ? 'none' : '1',
+    marginTop: windowWidth <= 992 ? 'var(--spacing-xl)' : '0',
+    textAlign: windowWidth <= 992 ? 'center' : 'left',
+    width: windowWidth <= 992 ? '100%' : '55%', // Control width on larger screens
+    paddingRight: windowWidth <= 992 ? '0' : 'var(--spacing-md)'
+  };
+  
+  // Image container styles to maintain space
+  const imageWrapperStyles = {
+    flex: windowWidth <= 992 ? 'none' : '1',
+    display: 'flex',
+    justifyContent: windowWidth <= 992 ? 'center' : 'flex-end',
+    alignItems: 'center',
+    width: windowWidth <= 992 ? '100%' : '45%', // Control width on larger screens
+    paddingLeft: windowWidth <= 992 ? '0' : 'var(--spacing-md)'
   };
   
   // Background animation setup
@@ -145,29 +174,31 @@ const Hero = () => {
 
   return (
     <section id="hero" className="hero">
-      <div className="container">
-        <div 
-          className="hero-image fade-in" 
-          style={heroImageContainerStyle}
-          onClick={handleImageReload}  // Allow clicking to force reload
-          key={`container-${forceReload}`}
-        >
-          <img 
-            src={profileImageUrl}
-            alt="Jad Saad" 
-            key={`profile-${timestamp}-${forceReload}`}
-            className="profile-image-focused"
-            style={profileImageStyle}
-            onLoad={() => console.log('Image loaded with headshot focus')}
-          />
-        </div>
-        <div className="hero-content">
+      <div className="container" style={containerStyles}>
+        <div className="hero-content" style={contentStyles}>
           <h1 className="fade-in">Hi, I'm <span className="accent-teal">Jad Saad</span></h1>
           <h2 className="fade-in">Computer Science Student & Developer</h2>
           <p className="fade-in">Building creative, efficient, and impactful software solutions.</p>
           <div className="hero-buttons fade-in">
             <a href="#projects" className="btn-primary">View Projects</a>
             <a href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume.pdf`} className="btn-secondary resume-download" download>Download Resume</a>
+          </div>
+        </div>
+        <div style={imageWrapperStyles}>
+          <div 
+            className="hero-image fade-in" 
+            style={heroImageContainerStyle}
+            onClick={handleImageReload}  // Allow clicking to force reload
+            key={`container-${forceReload}`}
+          >
+            <img 
+              src={profileImageUrl}
+              alt="Jad Saad" 
+              key={`profile-${timestamp}-${forceReload}`}
+              className="profile-image-focused"
+              style={profileImageStyle}
+              onLoad={() => console.log('Image loaded with headshot focus')}
+            />
           </div>
         </div>
       </div>
