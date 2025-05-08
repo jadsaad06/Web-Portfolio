@@ -70,7 +70,7 @@ const Projects = () => {
                 <span className="tech-tag">OpenAI API</span>
               </div>
               <div className="project-links">
-                <a href="https://github.com/jadsaad06/BOND-Real-Time-Messaging" target="_blank" rel="noopener noreferrer" className="project-link">
+                <a href="https://github.com/michmich242/PrepAndCount" target="_blank" rel="noopener noreferrer" className="project-link">
                   <i className="fab fa-github"></i> View Code
                 </a>
               </div>

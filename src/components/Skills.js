@@ -6,14 +6,20 @@ const Skills = () => {
     const animateSkillBars = () => {
       const skillBars = document.querySelectorAll('.skill-level');
       
-      skillBars.forEach(bar => {
+      skillBars.forEach((bar, index) => {
         const width = bar.getAttribute('data-skill-level');
         if (width) {
-          bar.style.width = '0'; // Reset width to 0
+          // Reset width to 0
+          bar.style.width = '0'; 
+          // Set CSS variable for the animation
+          bar.style.setProperty('--skill-percent', width);
+          
+          // Add slight delay between each skill bar animation
           setTimeout(() => {
-            bar.style.transition = 'width 1s ease';
-            bar.style.width = width; // Animate to the target width
-          }, 200);
+            bar.style.transition = 'width 1.5s ease-out';
+            bar.style.width = width;
+            bar.classList.add('animate');
+          }, 200 + (index * 150)); // Stagger the animations
         }
       });
     };
