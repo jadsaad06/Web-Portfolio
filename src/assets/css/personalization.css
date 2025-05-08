@@ -227,12 +227,42 @@ body {
   to { width: var(--skill-percent); }
 }
 
+@keyframes skillPulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
 .skill-level {
+  position: relative;
   animation: skillFill 1.5s ease-out forwards;
   animation-play-state: paused;
+  overflow: hidden;
+}
+
+.skill-level::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0.3) 50%, 
+    rgba(255,255,255,0) 100%);
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .skill-level.animate {
+  animation: skillFill 1.5s ease-out forwards, skillPulse 2s ease-in-out 1.5s;
   animation-play-state: running;
 }
 
@@ -316,4 +346,59 @@ body {
   .recruiter-nav {
     display: none;
   }
+}
+
+/* Enhanced Profile Image with Zoom on Face */
+.profile-image {
+  object-fit: cover !important;
+  object-position: center 25% !important; /* Adjust higher to focus more on the face */
+  transform: scale(1.3) !important; /* Increase zoom to 30% */
+  transition: transform 0.5s ease !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  border: 5px solid var(--accent-teal-light) !important;
+}
+
+.hero-image {
+  position: relative !important;
+  overflow: hidden !important;
+  width: 300px !important;
+  height: 300px !important;
+  margin: 0 auto !important;
+  border-radius: 50% !important;
+}
+
+.hero-image:hover .profile-image {
+  transform: scale(1.4) !important; /* Zoom in more on hover */
+}
+
+/* Profile container enhancements */
+.hero .hero-image {
+  /* These styles will be overridden by the more specific selector above */
+}
+
+/* Enhanced Profile Image with Absolute Positioning - Overrides all other styles */
+.profile-image-focused {
+  object-fit: cover !important;
+  object-position: 35% 30% !important; /* Adjusted to center on face in headshot style */
+  transform: scale(2.0) !important; /* More dramatic zoom for headshot effect */
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  border: 5px solid var(--accent-teal-light) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Container styles - ensure visibility */
+.hero-image.fade-in {
+  opacity: 1 !important; /* Override fade-in opacity */
+  animation: none !important; /* Disable animations that might interfere */
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 5 !important;
 }

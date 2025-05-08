@@ -238,13 +238,26 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: visible !important; /* Ensure content isn't hidden */
 }
 
 .hero-image img {
-  max-width: 80%;
+  max-width: 280px;
+  max-height: 280px;
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  object-position: 35% 30%; /* Adjusted to focus more on the face */
   border-radius: 50%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border: 5px solid var(--accent-teal-light);
+  transform: scale(1.8); /* Increased zoom for headshot effect */
+  transition: transform 0.5s ease;
+}
+
+.hero-image:hover img {
+  transform: scale(2.0); /* Further zoom on hover */
 }
 
 /* About Section */
@@ -674,6 +687,7 @@ img {
 .fade-in {
   opacity: 0;
   animation: fadeIn 1s ease forwards;
+  animation-fill-mode: both; /* Ensure final animation state is maintained */
 }
 
 .slide-up {

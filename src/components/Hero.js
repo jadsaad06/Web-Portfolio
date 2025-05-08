@@ -1,6 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Hero = () => {
+  const [timestamp, setTimestamp] = useState(Date.now());
+  const [forceReload, setForceReload] = useState(0);
+  
+  // Profile image URL with cache-busting parameters
+  const profileImageUrl = `${process.env.PUBLIC_URL}/assets/images/profile.jpg?nocache=${timestamp}&reload=${forceReload}`;
+  
+  // Define inline styles with headshot positioning
+  const profileImageStyle = {
+    objectFit: 'cover',
+    objectPosition: '35% 30%', // Adjusted to focus specifically on the face
+    transform: 'scale(2.0)', // More dramatic zoom for headshot effect
+    transition: 'transform 0.5s ease',
+    width: '100%',
+    height: '100%',
+    borderRadius: '50%',
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+    border: '5px solid #A7F3D0'
+  };
+  
+  const heroImageContainerStyle = {
+    position: 'relative',
+    overflow: 'hidden',
+    width: '280px',
+    height: '280px',
+    margin: '0 auto',
+    borderRadius: '50%'
+  };
+  
   // Background animation setup
   useEffect(() => {
     const hero = document.querySelector('.hero');
@@ -68,12 +96,32 @@ const Hero = () => {
       
       window.addEventListener('resize', handleResize);
       
+      // Force image to reload
+      const forceImageReload = () => {
+        setTimestamp(Date.now());
+        setForceReload(prev => prev + 1);
+      };
+      
+      // Force reload after mounting and again after a delay
+      forceImageReload();
+      
+      setTimeout(() => {
+        forceImageReload();
+      }, 300);
+      
       // Cleanup event listener on component unmount
       return () => {
         window.removeEventListener('resize', handleResize);
       };
     }
+    
   }, []);
+
+  // Handle manual reload of the image
+  const handleImageReload = () => {
+    setTimestamp(Date.now());
+    setForceReload(prev => prev + 1);
+  };
 
   return (
     <section id="hero" className="hero">
@@ -87,8 +135,20 @@ const Hero = () => {
             <a href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume.pdf`} className="btn-secondary resume-download" download>Download Resume</a>
           </div>
         </div>
-        <div className="hero-image fade-in">
-          <img src={`${process.env.PUBLIC_URL}/assets/images/profile.jpg`} alt="Jad Saad" />
+        <div 
+          className="hero-image fade-in" 
+          style={heroImageContainerStyle}
+          onClick={handleImageReload}  // Allow clicking to force reload
+          key={`container-${forceReload}`}
+        >
+          <img 
+            src={profileImageUrl}
+            alt="Jad Saad" 
+            key={`profile-${timestamp}-${forceReload}`}
+            className="profile-image-focused"
+            style={profileImageStyle}
+            onLoad={() => console.log('Image loaded with headshot focus')}
+          />
         </div>
       </div>
     </section>
