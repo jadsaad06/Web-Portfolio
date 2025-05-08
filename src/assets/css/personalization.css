@@ -394,6 +394,29 @@ body {
   z-index: 10 !important;
 }
 
+/* Responsive adjustments for the profile image */
+@media screen and (max-width: 992px) {
+  .profile-image-focused {
+    transform: scale(1.6) !important; /* Reduced zoom for tablet */
+  }
+  
+  .hero-image.fade-in {
+    margin-bottom: 2rem !important; /* Extra space between image and content on tablet */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile-image-focused {
+    transform: scale(1.4) !important; /* Further reduced zoom for mobile */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .profile-image-focused {
+    transform: scale(1.3) !important; /* Smallest zoom for phones */
+  }
+}
+
 /* Container styles - ensure visibility */
 .hero-image.fade-in {
   opacity: 1 !important; /* Override fade-in opacity */

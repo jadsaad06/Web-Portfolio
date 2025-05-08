@@ -3,15 +3,24 @@ import React, { useEffect, useState } from 'react';
 const Hero = () => {
   const [timestamp, setTimestamp] = useState(Date.now());
   const [forceReload, setForceReload] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
   
   // Profile image URL with cache-busting parameters
   const profileImageUrl = `${process.env.PUBLIC_URL}/assets/images/profile.jpg?nocache=${timestamp}&reload=${forceReload}`;
+  
+  // Determine scaling based on screen size
+  const getScaleFactor = () => {
+    if (windowWidth <= 576) return 1.3;
+    if (windowWidth <= 768) return 1.4;
+    if (windowWidth <= 992) return 1.6;
+    return 2.0;
+  };
   
   // Define inline styles with headshot positioning
   const profileImageStyle = {
     objectFit: 'cover',
     objectPosition: '35% 30%', // Adjusted to focus specifically on the face
-    transform: 'scale(2.0)', // More dramatic zoom for headshot effect
+    transform: `scale(${getScaleFactor()})`, // Responsive zoom based on screen size
     transition: 'transform 0.5s ease',
     width: '100%',
     height: '100%',
@@ -20,13 +29,15 @@ const Hero = () => {
     border: '5px solid #A7F3D0'
   };
   
+  // Adjust container size based on screen width
   const heroImageContainerStyle = {
     position: 'relative',
     overflow: 'hidden',
-    width: '280px',
-    height: '280px',
+    width: windowWidth <= 576 ? '220px' : windowWidth <= 768 ? '250px' : '280px',
+    height: windowWidth <= 576 ? '220px' : windowWidth <= 768 ? '250px' : '280px',
     margin: '0 auto',
-    borderRadius: '50%'
+    borderRadius: '50%',
+    marginBottom: windowWidth <= 992 ? '2rem' : '0'
   };
   
   // Background animation setup
@@ -88,10 +99,11 @@ const Hero = () => {
       
       animate();
       
-      // Resize canvas on window resize
+      // Handle window resize
       const handleResize = () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        setWindowWidth(window.innerWidth);
       };
       
       window.addEventListener('resize', handleResize);
@@ -117,6 +129,14 @@ const Hero = () => {
     
   }, []);
 
+  // Listen for window resizing
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Handle manual reload of the image
   const handleImageReload = () => {
     setTimestamp(Date.now());
@@ -126,15 +146,6 @@ const Hero = () => {
   return (
     <section id="hero" className="hero">
       <div className="container">
-        <div className="hero-content">
-          <h1 className="fade-in">Hi, I'm <span className="accent-teal">Jad Saad</span></h1>
-          <h2 className="fade-in">Computer Science Student & Developer</h2>
-          <p className="fade-in">Building creative, efficient, and impactful software solutions.</p>
-          <div className="hero-buttons fade-in">
-            <a href="#projects" className="btn-primary">View Projects</a>
-            <a href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume.pdf`} className="btn-secondary resume-download" download>Download Resume</a>
-          </div>
-        </div>
         <div 
           className="hero-image fade-in" 
           style={heroImageContainerStyle}
@@ -149,6 +160,15 @@ const Hero = () => {
             style={profileImageStyle}
             onLoad={() => console.log('Image loaded with headshot focus')}
           />
+        </div>
+        <div className="hero-content">
+          <h1 className="fade-in">Hi, I'm <span className="accent-teal">Jad Saad</span></h1>
+          <h2 className="fade-in">Computer Science Student & Developer</h2>
+          <p className="fade-in">Building creative, efficient, and impactful software solutions.</p>
+          <div className="hero-buttons fade-in">
+            <a href="#projects" className="btn-primary">View Projects</a>
+            <a href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume.pdf`} className="btn-secondary resume-download" download>Download Resume</a>
+          </div>
         </div>
       </div>
     </section>
