@@ -229,6 +229,7 @@ img {
 
 .hero-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--spacing-md);
   margin-top: var(--spacing-lg);
 }
@@ -951,6 +952,35 @@ img {
   font-size: 0.9rem;
   margin-top: var(--spacing-xs);
   color: #aaa;
+}
+
+.footer-resume-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.footer-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ddd;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.footer-resume-btn:hover {
+  background-color: var(--accent-teal);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.footer-resume-btn i {
+  font-size: 0.75rem;
 }
 
 .footer-links ul {

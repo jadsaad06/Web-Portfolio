@@ -181,7 +181,12 @@ const Hero = () => {
           <p className="fade-in">Building creative, efficient, and impactful software solutions.</p>
           <div className="hero-buttons fade-in">
             <a href="#projects" className="btn-primary">View Projects</a>
-            <a href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume.pdf`} className="btn-secondary resume-download" download>Download Resume</a>
+            <a href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume_PM.pdf`} className="btn-secondary resume-download resume-pm" download>
+              <i className="fas fa-file-alt"></i> PM Resume
+            </a>
+            <a href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume_SWE.pdf`} className="btn-secondary resume-download resume-swe" download>
+              <i className="fas fa-code"></i> SWE Resume
+            </a>
           </div>
         </div>
         <div style={imageWrapperStyles}>

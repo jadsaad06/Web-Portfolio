@@ -45,11 +45,18 @@ const Contact = () => {
         <div className="cta-buttons">
           <a href="#contact" className="btn-primary">Contact Me</a>
           <a 
-            href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume.pdf`} 
-            className="btn-secondary resume-download" 
+            href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume_PM.pdf`} 
+            className="btn-secondary resume-download resume-pm" 
             download
           >
-            Download Resume
+            <i className="fas fa-file-alt"></i> PM Resume
+          </a>
+          <a 
+            href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume_SWE.pdf`} 
+            className="btn-secondary resume-download resume-swe" 
+            download
+          >
+            <i className="fas fa-code"></i> SWE Resume
           </a>
         </div>
       </div>
@@ -81,45 +88,6 @@ const Contact = () => {
                 <a href="https://linkedin.com/in/jad-saad-" target="_blank" rel="noopener noreferrer">linkedin.com/in/jad-saad-</a>
               </div>
             </div>
-          </div>
-          
-          <div className="contact-form slide-up">
-            <form id="contactForm" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  value={formData.name}
-                  onChange={handleChange}
-                  required 
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
-                  value={formData.email}
-                  onChange={handleChange}
-                  required 
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  rows="5" 
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" className="btn-primary">Send Message</button>
-            </form>
           </div>
         </div>
         

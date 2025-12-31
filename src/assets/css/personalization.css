@@ -133,19 +133,29 @@ body {
 .resume-download {
   position: relative;
   overflow: hidden;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.resume-download::after {
-  content: ''; /* Remove the page logo */
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.3s ease;
+.resume-download i {
+  font-size: 0.9rem;
 }
 
-.resume-download:hover::after {
-  transform: translateY(-50%) scale(1.2);
+.resume-pm {
+  background-color: var(--accent-purple) !important;
+}
+
+.resume-pm:hover {
+  background-color: var(--accent-purple-light) !important;
+}
+
+.resume-swe {
+  background-color: var(--accent-teal) !important;
+}
+
+.resume-swe:hover {
+  background-color: var(--accent-teal-light) !important;
 }
 
 /* Enhanced Contact Form with Focus Effects */
@@ -174,8 +184,9 @@ body {
 
 .recruiter-cta .cta-buttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center; /* Center align the buttons */
-    gap: 20px; /* Add space between the buttons */
+    gap: 15px; /* Add space between the buttons */
     margin-top: 15px; /* Add spacing above the buttons */
 }
 
