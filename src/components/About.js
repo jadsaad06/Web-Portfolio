@@ -35,8 +35,9 @@ const About = () => {
         <h2 className="section-title">About Me</h2>
         <div className="about-content">
           <div className="about-text slide-up">
-            <p>I'm a Junior studying Computer Science at Portland State University, passionate about building creative, efficient, and impactful software solutions. Whether it's crafting immersive games, dynamic web applications, or algorithms that solve real-world problems, I enjoy every step of the journey.</p>
-            <p>My academic journey includes simultaneously earning an Associate of Science degree while completing high school through the Early College High School Program. Now at Portland State University's Honor's College, I'm expanding my knowledge in data structures, algorithms, operating systems, and database management.</p>
+            <p>I'm a Computer Science student at Portland State University who enjoys building things that actually get used. I'm especially interested in AI, product-driven engineering, and systems that connect software with real-world interaction. Right now, I'm leading product design and development on AI Fishbowl, a multi-modal system combining LLMs, speech, and hardware to create interactive experiences, soon to be available in Portland State University's computer science lounge!</p>
+            <p>Outside of coding, I'm big on staying active and competitive. You'll usually find me weightlifting, rock climbing, or snowboarding when I'm not at my desk. I also love gaming, both as a way to unwind and as inspiration for how good systems feel when they're well designed.</p>
+            <p>I enjoy working in collaborative environments, thinking through both the technical and human side of products, and turning rough ideas into something clean, usable, and impactful.</p>
           </div>
           <div className="about-interests slide-up">
             <h3>Interests</h3>

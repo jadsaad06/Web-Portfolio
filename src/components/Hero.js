@@ -177,7 +177,7 @@ const Hero = () => {
       <div className="container" style={containerStyles}>
         <div className="hero-content" style={contentStyles}>
           <h1 className="fade-in">Hi, I'm <span className="accent-teal">Jad Saad</span></h1>
-          <h2 className="fade-in">Computer Science Student & Developer</h2>
+          <h2 className="fade-in">Senior CS Student · Developer · Aspiring PM</h2>
           <p className="fade-in">Building creative, efficient, and impactful software solutions.</p>
           <div className="hero-buttons fade-in">
             <a href="#projects" className="btn-primary">View Projects</a>
