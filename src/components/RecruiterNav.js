@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 
 const RecruiterNav = () => {
   const [activeSection, setActiveSection] = useState('hero');
-  const sections = ['hero', 'about', 'skills', 'leadership', 'projects', 'education', 'contact'];
+  
+  const sections = useMemo(() => 
+    ['hero', 'about', 'skills', 'leadership', 'projects', 'education', 'contact'], 
+  []);
   
   useEffect(() => {
     // Update active nav item on scroll
@@ -31,7 +34,7 @@ const RecruiterNav = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [sections]);
   
   const handleClick = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -57,4 +60,4 @@ const RecruiterNav = () => {
   );
 };
 
-export default RecruiterNav; 
+export default RecruiterNav;

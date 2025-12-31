@@ -1,41 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [id]: value
-    }));
-  };
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Simple validation
-    if (!formData.name || !formData.email || !formData.message) {
-      alert('Please fill in all fields');
-      return;
-    }
-    
-    // In a real implementation, you would send this data to a server
-    // For now, we'll just show a success message
-    alert(`Thank you for your message, ${formData.name}! I'll get back to you soon.`);
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-  };
-  
   // Function to add a recruiter CTA section
   const renderRecruiterCTA = () => {
     return (
@@ -98,4 +63,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;
