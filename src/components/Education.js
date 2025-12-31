@@ -13,7 +13,7 @@ const Education = () => {
             <div className="education-content">
               <h3>Portland State University, Honor's College</h3>
               <p className="education-degree">Bachelor of Science in Computer Science</p>
-              <p className="education-gpa">GPA: 3.82</p>
+              <p className="education-gpa">GPA: 3.91</p>
               <div className="education-details">
                 <h4>Relevant Coursework:</h4>
                 <ul>

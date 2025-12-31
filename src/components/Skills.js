@@ -178,6 +178,31 @@ const Skills = () => {
               <span className="skill-tag">Stakeholder Communication</span>
             </div>
           </div>
+          
+          {/* Certifications */}
+          <div className="skills-category slide-up">
+            <h3>Certifications</h3>
+            <div className="certifications-grid">
+              <div className="certification-item">
+                <div className="certification-icon">
+                  <i className="fab fa-aws"></i>
+                </div>
+                <div className="certification-info">
+                  <h4>AWS Cloud Practitioner</h4>
+                  <p>Amazon Web Services</p>
+                </div>
+              </div>
+              <div className="certification-item">
+                <div className="certification-icon">
+                  <i className="fas fa-tasks"></i>
+                </div>
+                <div className="certification-info">
+                  <h4>Certified Scrum Product Owner</h4>
+                  <p>CSPO · Scrum Alliance</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

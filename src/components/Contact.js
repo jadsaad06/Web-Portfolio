@@ -41,10 +41,6 @@ const Contact = () => {
                 <a href="mailto:jadsaad896@gmail.com">jadsaad896@gmail.com</a>
               </div>
               <div className="contact-item">
-                <i className="fas fa-map-marker-alt"></i>
-                <span>Portland, OR</span>
-              </div>
-              <div className="contact-item">
                 <i className="fab fa-github"></i>
                 <a href="https://github.com/jadsaad06" target="_blank" rel="noopener noreferrer">github.com/jadsaad06</a>
               </div>
