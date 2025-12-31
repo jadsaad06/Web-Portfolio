@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -35,6 +35,7 @@ const Header = () => {
           <ul className={`nav-list ${isActive ? 'active' : ''}`}>
             <li><a href="#about" onClick={(e) => handleLinkClick(e, 'about')}>About</a></li>
             <li><a href="#skills" onClick={(e) => handleLinkClick(e, 'skills')}>Skills</a></li>
+            <li><a href="#leadership" onClick={(e) => handleLinkClick(e, 'leadership')}>Leadership</a></li>
             <li><a href="#projects" onClick={(e) => handleLinkClick(e, 'projects')}>Projects</a></li>
             <li><a href="#education" onClick={(e) => handleLinkClick(e, 'education')}>Education</a></li>
             <li><a href="#contact" onClick={(e) => handleLinkClick(e, 'contact')}>Contact</a></li>

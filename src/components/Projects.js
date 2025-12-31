@@ -19,8 +19,8 @@ const Projects = () => {
       
       if (projectCards.length >= 2) {
         const highlight2 = document.createElement('div');
-        highlight2.className = 'project-highlight';
-        highlight2.textContent = 'Latest';
+        highlight2.className = 'project-highlight project-highlight-ai';
+        highlight2.textContent = 'AI/ML';
         projectCards[1].style.position = 'relative';
         projectCards[1].style.overflow = 'visible';
         projectCards[1].querySelector('.project-content').style.position = 'relative';
@@ -57,27 +57,7 @@ const Projects = () => {
       <div className="container">
         <h2 className="section-title">Projects</h2>
         <div className="projects-grid">
-          {/* Project 1: Prep&Count */}
-          <div className="project-card slide-up">
-            <div className="project-content">
-              <h3>Prep&Count</h3>
-              <p>3-in-1 Fitness AI Application integrating workout tracking, nutrition logging, and AI-powered meal-prepping using OpenAI API.</p>
-              <div className="project-tech">
-                <span className="tech-tag">React Native</span>
-                <span className="tech-tag">Node.js</span>
-                <span className="tech-tag">Express</span>
-                <span className="tech-tag">MongoDB</span>
-                <span className="tech-tag">OpenAI API</span>
-              </div>
-              <div className="project-links">
-                <a href="https://github.com/michmich242/PrepAndCount" target="_blank" rel="noopener noreferrer" className="project-link">
-                  <i className="fab fa-github"></i> View Code
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          {/* Project 2: Bond */}
+          {/* Project 1: Bond - Real-time Messaging */}
           <div className="project-card slide-up">
             <div className="project-content">
               <h3>Bond</h3>
@@ -91,6 +71,28 @@ const Projects = () => {
               </div>
               <div className="project-links">
                 <a href="https://github.com/jadsaad06/BOND-Real-Time-Messaging" target="_blank" rel="noopener noreferrer" className="project-link">
+                  <i className="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Project 2: Media Lens - ML/NLP News Analysis */}
+          <div className="project-card slide-up">
+            <div className="project-content">
+              <h3>Media Lens</h3>
+              <p>News stance and coverage explorer that clusters articles into events, quantifies stance (pro/neutral/anti) using NLP, and visualizes coverage diversity across outlets with explainable ML.</p>
+              <div className="project-tech">
+                <span className="tech-tag">Python</span>
+                <span className="tech-tag">FastAPI</span>
+                <span className="tech-tag">HuggingFace</span>
+                <span className="tech-tag">Postgres</span>
+                <span className="tech-tag">Redis</span>
+                <span className="tech-tag">Docker</span>
+                <span className="tech-tag">React</span>
+              </div>
+              <div className="project-links">
+                <a href="https://github.com/jadsaad06/Media-Lens" target="_blank" rel="noopener noreferrer" className="project-link">
                   <i className="fab fa-github"></i> View Code
                 </a>
               </div>
@@ -175,4 +177,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;

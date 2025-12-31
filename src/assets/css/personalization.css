@@ -221,6 +221,11 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.project-highlight-ai {
+  background: linear-gradient(135deg, #10B981 0%, var(--accent-teal) 100%);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
 /* Animated Skill Level Bars */
 @keyframes skillFill {
   from { width: 0; }

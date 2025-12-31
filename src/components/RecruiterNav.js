@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const RecruiterNav = () => {
   const [activeSection, setActiveSection] = useState('hero');
-  const sections = ['hero', 'about', 'skills', 'projects', 'education', 'contact'];
+  const sections = ['hero', 'about', 'skills', 'leadership', 'projects', 'education', 'contact'];
   
   useEffect(() => {
     // Update active nav item on scroll
