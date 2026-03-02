@@ -66,7 +66,7 @@ const TmobileInternship = () => {
                 <i className="fas fa-star" aria-hidden="true"></i>
                 Highlights
               </h4>
-              <ul className="tmobile-highlight-list" role="list">
+              <ul className="tmobile-highlight-list">
                 <li>
                   <span className="highlight-icon" aria-hidden="true">
                     <i className="fas fa-brain"></i>
