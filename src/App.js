@@ -8,6 +8,7 @@ import './assets/css/personalization.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import TmobileInternship from './components/TmobileInternship';
 import Skills from './components/Skills';
 import Leadership from './components/Leadership';
 import Projects from './components/Projects';
@@ -53,6 +54,7 @@ function App() {
       <Header />
       <Hero />
       <About />
+      <TmobileInternship />
       <Skills />
       <Leadership />
       <Projects />

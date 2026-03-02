@@ -57,20 +57,21 @@ const Projects = () => {
       <div className="container">
         <h2 className="section-title">Projects</h2>
         <div className="projects-grid">
-          {/* Project 1: Bond - Real-time Messaging */}
+          {/* Project 1: AI Fishbowl - Featured */}
           <div className="project-card slide-up">
             <div className="project-content">
-              <h3>Bond</h3>
-              <p>Real-time messaging platform designed to bridge communication gaps across generations with sleek design, customizable features, and seamless connectivity.</p>
+              <h3>AI Fishbowl</h3>
+              <p>An interactive conversational AI installation featuring a voice-driven digital fish. Uses real-time speech recognition, LLM reasoning with Gemini 2.5 Flash, and text-to-speech for natural spoken conversations in PSU's CS lounge.</p>
               <div className="project-tech">
+                <span className="tech-tag">Python</span>
+                <span className="tech-tag">FastAPI</span>
+                <span className="tech-tag">Gemini</span>
+                <span className="tech-tag">Google Cloud STT/TTS</span>
                 <span className="tech-tag">React</span>
-                <span className="tech-tag">Node.js</span>
-                <span className="tech-tag">Express</span>
-                <span className="tech-tag">MongoDB</span>
-                <span className="tech-tag">WebSockets</span>
+                <span className="tech-tag">MCP</span>
               </div>
               <div className="project-links">
-                <a href="https://github.com/jadsaad06/BOND-Real-Time-Messaging" target="_blank" rel="noopener noreferrer" className="project-link">
+                <a href="https://github.com/jadsaad06/AI-Fishbowl" target="_blank" rel="noopener noreferrer" className="project-link">
                   <i className="fab fa-github"></i> View Code
                 </a>
               </div>
@@ -99,44 +100,48 @@ const Projects = () => {
             </div>
           </div>
           
-          {/* Project 3: Discord Server Remake */}
+          {/* Project 3: Prep & Count - AI Nutrition App */}
           <div className="project-card slide-up">
             <div className="project-content">
-              <h3>Discord Server Remake</h3>
-              <p>Engineered a scalable communication server in Python utilizing a custom 2-3 Tree data structure with O(log n) search complexity for channel operations.</p>
+              <h3>Prep & Count</h3>
+              <p>A 3-in-1 fitness application combining macro tracking, fitness progress monitoring, and AI-powered meal prep planning. Built with MERN stack and Expo for cross-platform mobile support.</p>
               <div className="project-tech">
-                <span className="tech-tag">Python</span>
-                <span className="tech-tag">Data Structures</span>
-                <span className="tech-tag">Testing</span>
+                <span className="tech-tag">React Native</span>
+                <span className="tech-tag">Expo</span>
+                <span className="tech-tag">Node.js</span>
+                <span className="tech-tag">Express</span>
+                <span className="tech-tag">MongoDB</span>
+                <span className="tech-tag">OpenAI API</span>
               </div>
               <div className="project-links">
-                <a href="https://github.com/jadsaad06/Discord-Server-Remake" target="_blank" rel="noopener noreferrer" className="project-link">
+                <a href="https://github.com/michmich242/PrepAndCount" target="_blank" rel="noopener noreferrer" className="project-link">
                   <i className="fab fa-github"></i> View Code
                 </a>
               </div>
             </div>
           </div>
           
-          {/* Project 4: Pokemon Dupe */}
+          {/* Project 4: Bond - Real-time Messaging */}
           <div className="project-card slide-up">
             <div className="project-content">
-              <h3>Pokemon Dupe</h3>
-              <p>A turn-based Pokémon battle game in C++ using a Binary Search Tree (BST) for Pokémon management, featuring dynamic binding, strategic combat, and interactive gameplay.</p>
+              <h3>Bond</h3>
+              <p>Real-time messaging platform designed to bridge communication gaps across generations with sleek design, customizable features, and seamless connectivity.</p>
               <div className="project-tech">
-                <span className="tech-tag">C++</span>
-                <span className="tech-tag">Unique Pointers</span>
-                <span className="tech-tag">STL</span>
-                <span className="tech-tag">Data Structures</span>
+                <span className="tech-tag">React</span>
+                <span className="tech-tag">Node.js</span>
+                <span className="tech-tag">Express</span>
+                <span className="tech-tag">MongoDB</span>
+                <span className="tech-tag">WebSockets</span>
               </div>
               <div className="project-links">
-                <a href="https://github.com/jadsaad06/Pokemon-Dupe" target="_blank" rel="noopener noreferrer" className="project-link">
+                <a href="https://github.com/jadsaad06/BOND-Real-Time-Messaging" target="_blank" rel="noopener noreferrer" className="project-link">
                   <i className="fab fa-github"></i> View Code
                 </a>
               </div>
             </div>
           </div>
           
-          {/* Project 5: Elemental-Battles */}
+          {/* Project 6: Elemental-Battles */}
           <div className="project-card slide-up">
             <div className="project-content">
               <h3>Elemental-Battles</h3>
@@ -154,7 +159,7 @@ const Projects = () => {
             </div>
           </div>
           
-          {/* Project 6: Shortest-Maze-Path */}
+          {/* Project 7: Shortest-Maze-Path */}
           <div className="project-card slide-up">
             <div className="project-content">
               <h3>Shortest-Maze-Path</h3>

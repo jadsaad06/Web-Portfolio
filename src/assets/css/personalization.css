@@ -441,3 +441,312 @@ body {
   position: relative !important;
   z-index: 5 !important;
 }
+
+/* ============================================
+   T-Mobile Internship Section Styles
+   ============================================ */
+
+:root {
+  --tmobile-magenta: #E20074;
+  --tmobile-magenta-light: rgba(226, 0, 116, 0.1);
+  --tmobile-magenta-glow: rgba(226, 0, 116, 0.3);
+}
+
+.tmobile-section {
+  position: relative;
+}
+
+.tmobile-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tmobile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--tmobile-magenta) 0%, var(--accent-purple) 100%);
+}
+
+.tmobile-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, var(--tmobile-magenta-light) 0%, rgba(124, 58, 237, 0.04) 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tmobile-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  background-color: var(--primary-bg);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.tmobile-logo {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.tmobile-card:hover .tmobile-logo {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.tmobile-card:hover .tmobile-logo-wrapper {
+  box-shadow: 0 4px 16px var(--tmobile-magenta-glow);
+}
+
+.tmobile-title-block {
+  flex: 1;
+}
+
+.tmobile-badge-wrapper {
+  margin-bottom: var(--spacing-sm);
+}
+
+.tmobile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: linear-gradient(135deg, var(--tmobile-magenta) 0%, #FF1493 100%);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  animation: badgePulse 2s ease-in-out infinite;
+  box-shadow: 0 2px 8px var(--tmobile-magenta-glow);
+}
+
+.tmobile-badge i {
+  font-size: 0.75rem;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px var(--tmobile-magenta-glow);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px var(--tmobile-magenta-glow);
+  }
+}
+
+.tmobile-title-block h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.tmobile-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: 0;
+}
+
+.tmobile-subtitle i {
+  color: var(--tmobile-magenta);
+}
+
+.tmobile-content {
+  padding: var(--spacing-xl);
+}
+
+.tmobile-description {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+  border-left: 3px solid var(--tmobile-magenta);
+  padding-left: var(--spacing-md);
+}
+
+.tmobile-highlights {
+  background-color: var(--secondary-bg);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+}
+
+.tmobile-highlights h4 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.tmobile-highlights h4 i {
+  color: var(--tmobile-magenta);
+}
+
+.tmobile-highlight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.tmobile-highlight-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.highlight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: linear-gradient(135deg, var(--tmobile-magenta-light) 0%, var(--accent-purple-light) 100%);
+  border-radius: 8px;
+  color: var(--tmobile-magenta);
+  font-size: 0.9rem;
+}
+
+.highlight-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.highlight-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.tmobile-footer {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+}
+
+.btn-tmobile {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: linear-gradient(135deg, var(--tmobile-magenta) 0%, var(--accent-purple) 100%);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--tmobile-magenta-glow);
+}
+
+.btn-tmobile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--tmobile-magenta-glow);
+  color: white;
+}
+
+.btn-tmobile i {
+  font-size: 0.9rem;
+}
+
+/* T-Mobile Section Responsive Styles */
+@media screen and (max-width: 768px) {
+  .tmobile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+  }
+  
+  .tmobile-logo-wrapper {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+  }
+  
+  .tmobile-title-block h3 {
+    font-size: 1.3rem;
+  }
+  
+  .tmobile-subtitle {
+    justify-content: center;
+  }
+  
+  .tmobile-badge-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tmobile-content {
+    padding: var(--spacing-lg);
+  }
+  
+  .tmobile-description {
+    font-size: 1rem;
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+    border-top: 3px solid var(--tmobile-magenta);
+    padding-top: var(--spacing-md);
+  }
+  
+  .tmobile-highlights {
+    padding: var(--spacing-md);
+  }
+  
+  .tmobile-highlights h4 {
+    justify-content: center;
+  }
+  
+  .tmobile-highlight-list li {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .tmobile-title-block h3 {
+    font-size: 1.15rem;
+  }
+  
+  .tmobile-badge {
+    font-size: 0.8rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .highlight-text {
+    font-size: 0.9rem;
+  }
+  
+  .btn-tmobile {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 0.95rem;
+  }
+}

@@ -8,7 +8,6 @@ const Contact = () => {
         <h3>Looking for a Talented Developer?</h3>
         <p>I'm currently open to new opportunities and would love to discuss how my skills and experience can benefit your team.</p>
         <div className="cta-buttons">
-          <a href="#contact" className="btn-primary">Contact Me</a>
           <a 
             href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume_PM.pdf`} 
             className="btn-secondary resume-download resume-pm" 
