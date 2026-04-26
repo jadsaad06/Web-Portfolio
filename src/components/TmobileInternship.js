@@ -80,7 +80,7 @@ const TmobileInternship = () => {
                     <i className="fas fa-map-marker-alt"></i>
                   </span>
                   <span className="highlight-text">
-                    <strong>Location:</strong> Frisco, TX
+                    <strong>Location:</strong> Bellevue, Wa
                   </span>
                 </li>
                 <li>
