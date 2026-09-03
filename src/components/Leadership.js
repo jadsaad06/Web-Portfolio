@@ -1,36 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
 const Leadership = () => {
-  useEffect(() => {
-    // Animation for slide-up elements
-    const animateElements = document.querySelectorAll('.leadership-section .slide-up');
-    
-    const checkAnimations = () => {
-      const triggerBottom = window.innerHeight * 0.8;
-      
-      animateElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        
-        if (elementTop < triggerBottom) {
-          element.style.animation = 'slideUp 0.5s ease forwards';
-        }
-      });
-    };
-    
-    // Initial check
-    checkAnimations();
-    
-    // Add scroll event listener
-    window.addEventListener('scroll', checkAnimations);
-    
-    // Cleanup on unmount
-    return () => {
-      window.removeEventListener('scroll', checkAnimations);
-    };
-  }, []);
+  const sectionRef = useRevealOnScroll();
 
   return (
-    <section id="leadership" className="section leadership-section">
+    <section id="leadership" className="section leadership-section" ref={sectionRef}>
       <div className="container">
         <h2 className="section-title">Leadership Experience</h2>
         
@@ -47,7 +22,7 @@ const Leadership = () => {
                 <p className="leadership-project">AI Fishbowl — Senior Capstone Project</p>
                 <p className="leadership-timeframe">
                   <i className="far fa-calendar-alt"></i>
-                  Sept 2024 – Present
+                  Sept 2024 – Aug 2026
                 </p>
               </div>
             </div>

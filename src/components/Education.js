@@ -1,14 +1,17 @@
 import React from 'react';
+import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
 const Education = () => {
+  const sectionRef = useRevealOnScroll();
+
   return (
-    <section id="education" className="section">
+    <section id="education" className="section" ref={sectionRef}>
       <div className="container">
         <h2 className="section-title">Education</h2>
         <div className="education-timeline">
           <div className="education-item slide-up">
             <div className="education-date">
-              <span>Sept 2024 - Present</span>
+              <span>Sept 2024 – Aug 2026</span>
             </div>
             <div className="education-content">
               <h3>Portland State University, Honor's College</h3>

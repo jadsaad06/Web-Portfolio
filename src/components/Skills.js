@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
+import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
 const Skills = () => {
+  const sectionRef = useRevealOnScroll();
+
   useEffect(() => {
     // Function to animate skill bars
     const animateSkillBars = () => {
@@ -26,7 +29,13 @@ const Skills = () => {
     
     // Observe when the skills section comes into view
     const skillsSection = document.getElementById('skills');
-    
+
+    // Without observer support, fill the bars straight away.
+    if (skillsSection && typeof IntersectionObserver === 'undefined') {
+      animateSkillBars();
+      return undefined;
+    }
+
     if (skillsSection) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -41,15 +50,15 @@ const Skills = () => {
       
       // Cleanup function
       return () => {
-        if (skillsSection) {
-          observer.unobserve(skillsSection);
-        }
+        observer.disconnect();
       };
     }
+
+    return undefined;
   }, []);
   
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="section" ref={sectionRef}>
       <div className="container">
         <h2 className="section-title">Skills</h2>
         <div className="skills-container">

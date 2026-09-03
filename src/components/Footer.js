@@ -7,11 +7,12 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-logo">
             <a href="#hero">Jad Saad</a>
-            <p>Senior CS Student · Developer · Aspiring PM</p>
+            <p>Associate AI Engineer @ T-Mobile</p>
           </div>
           <div className="footer-links">
             <ul>
               <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
               <li><a href="#skills">Skills</a></li>
               <li><a href="#leadership">Leadership</a></li>
               <li><a href="#projects">Projects</a></li>

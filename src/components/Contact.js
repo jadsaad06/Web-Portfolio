@@ -1,58 +1,74 @@
 import React from 'react';
+import useRevealOnScroll from '../hooks/useRevealOnScroll';
+
+const CONTACT_LINKS = [
+  {
+    label: 'Email',
+    value: 'jadsaad896@gmail.com',
+    href: 'mailto:jadsaad896@gmail.com',
+    icon: 'fas fa-envelope',
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/jadsaad06',
+    href: 'https://github.com/jadsaad06',
+    icon: 'fab fa-github',
+    external: true,
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/jad-saad-',
+    href: 'https://linkedin.com/in/jad-saad-',
+    icon: 'fab fa-linkedin',
+    external: true,
+  },
+];
 
 const Contact = () => {
-  // Function to add a recruiter CTA section
-  const renderRecruiterCTA = () => {
-    return (
-      <div className="recruiter-cta">
-        <h3>Looking for a Talented Developer?</h3>
-        <p>I'm currently open to new opportunities and would love to discuss how my skills and experience can benefit your team.</p>
-        <div className="cta-buttons">
-          <a 
-            href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume_PM.pdf`} 
-            className="btn-secondary resume-download resume-pm" 
-            download
-          >
-            <i className="fas fa-file-alt"></i> PM Resume
-          </a>
-          <a 
-            href={`${process.env.PUBLIC_URL}/assets/resume/Jad_Saad_Resume_SWE.pdf`} 
-            className="btn-secondary resume-download resume-swe" 
-            download
-          >
-            <i className="fas fa-code"></i> SWE Resume
-          </a>
-        </div>
-      </div>
-    );
-  };
+  const sectionRef = useRevealOnScroll();
 
   return (
-    <section id="contact" className="section-alt">
+    <section id="contact" className="section-alt" ref={sectionRef}>
       <div className="container">
         <h2 className="section-title">Contact Me</h2>
+
         <div className="contact-content">
           <div className="contact-text slide-up">
-            <p>I'm always open to new opportunities and collaborations. Feel free to reach out if you'd like to connect!</p>
-            <div className="contact-info">
-              <div className="contact-item">
-                <i className="fas fa-envelope"></i>
-                <a href="mailto:jadsaad896@gmail.com">jadsaad896@gmail.com</a>
-              </div>
-              <div className="contact-item">
-                <i className="fab fa-github"></i>
-                <a href="https://github.com/jadsaad06" target="_blank" rel="noopener noreferrer">github.com/jadsaad06</a>
-              </div>
-              <div className="contact-item">
-                <i className="fab fa-linkedin"></i>
-                <a href="https://linkedin.com/in/jad-saad-" target="_blank" rel="noopener noreferrer">linkedin.com/in/jad-saad-</a>
-              </div>
-            </div>
+            <h3>Open to new opportunities</h3>
+            <p>
+              I'm always up for a conversation about AI engineering, product work, or whatever
+              you're building. Email is the fastest way to reach me, but feel free to connect with me on LinkedIn or check out my GitHub.
+            </p>
+            <a
+              href={`${process.env.PUBLIC_URL}/assets/resume/Resume_Updated.pdf`}
+              className="btn-secondary resume-download resume-swe"
+              download
+            >
+              <i className="fas fa-file-alt" aria-hidden="true"></i> Download Resume
+            </a>
           </div>
+
+          <ul className="contact-info slide-up">
+            {CONTACT_LINKS.map((link) => (
+              <li key={link.label}>
+                <a
+                  className="contact-item"
+                  href={link.href}
+                  {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  <span className="contact-item-icon" aria-hidden="true">
+                    <i className={link.icon}></i>
+                  </span>
+                  <span className="contact-item-text">
+                    <span className="contact-item-label">{link.label}</span>
+                    <span className="contact-item-value">{link.value}</span>
+                  </span>
+                  <i className="fas fa-arrow-right contact-item-arrow" aria-hidden="true"></i>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-        
-        {/* Recruiter Call-to-Action */}
-        {renderRecruiterCTA()}
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -34,6 +35,7 @@ const Header = () => {
         <nav className="nav">
           <ul className={`nav-list ${isActive ? 'active' : ''}`}>
             <li><a href="#about" onClick={(e) => handleLinkClick(e, 'about')}>About</a></li>
+            <li><a href="#experience" onClick={(e) => handleLinkClick(e, 'experience')}>Experience</a></li>
             <li><a href="#skills" onClick={(e) => handleLinkClick(e, 'skills')}>Skills</a></li>
             <li><a href="#leadership" onClick={(e) => handleLinkClick(e, 'leadership')}>Leadership</a></li>
             <li><a href="#projects" onClick={(e) => handleLinkClick(e, 'projects')}>Projects</a></li>
@@ -41,6 +43,7 @@ const Header = () => {
             <li><a href="#contact" onClick={(e) => handleLinkClick(e, 'contact')}>Contact</a></li>
           </ul>
         </nav>
+        <ThemeToggle />
         <div className="nav-toggle" onClick={toggleNav}>
           <span className={isActive ? 'active' : ''}></span>
           <span className={isActive ? 'active' : ''}></span>
