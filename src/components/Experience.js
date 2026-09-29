@@ -23,19 +23,19 @@ const EXPERIENCES = [
     badge: { label: 'Current Role', icon: 'fas fa-bolt', pulse: true },
     defaultOpen: true,
     summary:
-      "I'm back on IntentCX — T-Mobile's AI chatbot platform — this time full-time, shipping production agents and evals plus the internal tooling and automation the team builds on.",
+      "I'm back on IntentCX — T-Mobile's AI chatbot platform — full-time as an Associate AI Engineer. My current focus is building an e2e testing automation pipeline: the internal tooling that automates evaluation, release, and debugging so engineers spend time on the agent, not the process around it.",
     body: [
       "I'm back on IntentCX — T-Mobile's AI chatbot platform — this time full-time. Same product, same team, now as an Associate AI Engineer. I'm continuing to ship production agents, tools, and evaluation work that sits in front of real customers, not a demo environment.",
-      'A growing share of my work is internal tooling and automation — the systems the team itself runs on. Automating the manual steps around evaluation, release, and debugging means engineers spend their time on the agent, not on the process around it.',
+      'My current focus is an e2e testing automation pipeline — the internal tooling the team runs on. Automating the manual steps around evaluation, release, and debugging means engineers spend their time on the agent, not the process around it.',
       'The internship is what got me here. I liked the problem enough to come back: conversational AI at the scale of hundreds of thousands of daily chats, with the kind of constraints that make you actually care about evals, latency, and whether a feature is safe to ship.',
     ],
     highlights: [
       { icon: 'fas fa-brain', label: 'Focus', text: 'Production agents, tools, and evals on IntentCX' },
-      { icon: 'fas fa-robot', label: 'Building', text: 'Internal tooling and automation for the engineering team' },
+      { icon: 'fas fa-robot', label: 'Building', text: 'E2E testing automation pipeline for the engineering team' },
       { icon: 'fas fa-map-marker-alt', label: 'Location', text: 'Bellevue, WA' },
       { icon: 'fas fa-comments', label: 'Team', text: 'IntentCX Customer Service Platform' },
     ],
-    tags: ['Agent Development', 'Internal Tooling', 'Automation', 'Production Evals', 'IntentCX'],
+    tags: ['E2E Testing', 'Internal Tooling', 'Automation', 'Agent Development', 'IntentCX'],
     primaryTags: 3,
     // Connector drawn beneath this card, linking it to the role below.
     growth: {
@@ -305,7 +305,7 @@ const Experience = () => {
           )}
         </div>
 
-        <div className="exp-impact" aria-label="What I shipped at T-Mobile">
+        <div className="exp-impact" aria-label="What I shipped as a T-Mobile intern">
           {IMPACT.map((metric) => (
             <div className="exp-impact-metric" key={metric.label}>
               <span className="exp-impact-value">{metric.value}</span>
