@@ -103,8 +103,8 @@ const EXPERIENCES = [
 const IMPACT = [
   {
     value: '100+',
-    label: 'Production bugs identified with my analytics tool',
-    detail: 'Measures how often a behavior shows up across a batch of conversations, so the team knows what to fix first',
+    label: 'Production issues triaged by real-world frequency',
+    detail: 'My analytics tool measures how often a behavior shows up across prod conversations, so the team can prioritize by urgency instead of guessing',
   },
   {
     value: '50+',
